@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+#lienzo {
+    margin: auto;
+    display: block;
+    background-color: #f3e2d0;
+    touch-action: none;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
+}
+
+button {
+    background: black;
+    color: white;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}

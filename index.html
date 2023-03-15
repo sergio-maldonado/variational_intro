@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <!-- <script type="module">
+        import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
+        customElements.define("latex-js", LaTeXJSComponent)
+    </script> -->
+</head>
+<body>
+    <!-- <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js/dist/">
+        \documentclass{article}
+    
+        \begin{document}
+        Hello World. $\int_0^5 y^3 + x_2 - \theta dx$
+        \end{document}
+      </latex-js> -->
+    <canvas id="lienzo" width="400" height="400"></canvas>
+
+    <p>Arc lenght = <span id="resultado"></span></p>
+
+    <button type="button" id="refrescar">Refrescar</button>
+   
+    <script src="./main.js"></script>
+</body>
+</html>
