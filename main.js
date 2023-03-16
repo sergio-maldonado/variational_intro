@@ -54,6 +54,7 @@ class Arco {
         this.ctx.arc(x, y, 5, 0, 2 * Math.PI)
         this.ctx.fillStyle = "green"
         this.ctx.fill()
+        this.ctx.closePath()
     }
 
     crearReticula(){
@@ -75,6 +76,7 @@ class Arco {
         this.ctx.lineTo( x, this.alturaCanvas )
         this.ctx.strokeStyle = "#e6791e"
         this.ctx.stroke()
+        this.ctx.closePath()
     }
 
     crearLineaHorizontal( y ){
@@ -83,6 +85,7 @@ class Arco {
         this.ctx.lineTo( this.anchoCanvas, y )
         this.ctx.strokeStyle = "#e6791e"
         this.ctx.stroke()
+        this.ctx.closePath()
     }
 
     marcarInicio( ev ){
@@ -143,6 +146,7 @@ class Arco {
 
         if( this.finalizado ) return
 
+        this.ctx.closePath()
         this.calcularDerivada()
         this.spResultado.textContent = this.calcularDerivada() + ' a.u.'
         this.finalizado= true
