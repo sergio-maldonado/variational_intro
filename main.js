@@ -3,7 +3,7 @@ class Arco {
 
     constructor(){
         this.canvas = document.getElementById("lienzo")
-        this.ladoCanvas = 400
+        this.ladoCanvas = 500
         this.alturaCanvas = null
         this.anchoCanvas = null
         this.ctx = this.canvas.getContext("2d")
@@ -116,7 +116,9 @@ class Arco {
         this.puntitos.push({ x, y: this.alturaCanvas - y })
         this.ctx.moveTo( this.x1, this.y1 )
         this.ctx.lineTo( x, y )
-        this.ctx.stroke();
+        this.ctx.lineWidth = 5
+        this.ctx.strokeStyle = "red"
+        this.ctx.stroke()
         this.x1 = x
         this.y1 = y
     }
