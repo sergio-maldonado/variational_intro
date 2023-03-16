@@ -3,8 +3,9 @@ class Arco {
 
     constructor(){
         this.canvas = document.getElementById("lienzo")
-        this.alturaCanvas = this.canvas.offsetHeight
-        this.anchoCanvas = this.canvas.offsetWidth
+        this.ladoCanvas = 400
+        this.alturaCanvas = null
+        this.anchoCanvas = null
         this.ctx = this.canvas.getContext("2d")
         this.spResultado = document.getElementById('resultado')
         this.btnRefrescar = document.getElementById('refrescar')
@@ -16,6 +17,14 @@ class Arco {
     }
 
     iniciarDemo(){
+        //definir tamano canvas
+        this.canvas.width = this.ladoCanvas
+        this.canvas.height = this.ladoCanvas
+        this.alturaCanvas = this.canvas.offsetHeight
+        this.anchoCanvas = this.canvas.offsetWidth
+        //fijar medida vista canvas
+        document.querySelector('.medidaAncho').textContent = this.anchoCanvas
+        document.querySelector('.medidaAlto').textContent = this.alturaCanvas 
         //dibujar circulos
         const offsetInicial = 50
         this.dibujarCirculo( offsetInicial, this.alturaCanvas - offsetInicial )
@@ -44,11 +53,11 @@ class Arco {
 
     crearReticula(){
 
-        const numeroLineas = 9
-        let espaciador = this.anchoCanvas / (numeroLineas + 1)
+        const numeroDivisiones = 10
+        let espaciador = this.anchoCanvas / numeroDivisiones
         let iterador = espaciador
 
-        for (let i = 0; i < numeroLineas; i++) {
+        for (let i = 0; i < numeroDivisiones - 1; i++) {
             this.crearLineaVertical( iterador )
             this.crearLineaHorizontal( iterador )
             iterador += espaciador

@@ -2,11 +2,39 @@
     box-sizing: border-box;
 }
 
+.canvasContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.canvasContainer > div {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.canvasContainer > div > span {
+    position: absolute;
+}
+
+.canvasContainer > div > .medidaAlto {
+    top: 50%;
+    left: -40px;
+}
+
+.canvasContainer > div > .medidaAncho {
+    left: 50%;
+    bottom: -30px;
+}
+
 #lienzo {
-    margin: auto;
-    display: block;
     background-color: #f3e2d0;
     touch-action: none;
+}
+
+#lienzo span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: -20px;
 }
 
 p {
