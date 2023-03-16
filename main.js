@@ -9,6 +9,9 @@ class Arco {
         this.ctx = this.canvas.getContext("2d")
         this.spResultado = document.getElementById('resultado')
         this.btnRefrescar = document.getElementById('refrescar')
+        this.btnSnapshot = document.getElementById('snapshot')
+        this.btnDescarga = document.getElementById('download')
+        this.imgSnapshot = document.getElementById('snapshotCanvas')
         this.x1 = undefined
         this.y1 = undefined
         this.puntitos = []
@@ -41,6 +44,8 @@ class Arco {
         // this.canvas.ontouchmove = (ev) => this.dibujarArcoCel(ev)
         // this.canvas.ontouchend = () => this.finalizarTrazo()
         this.btnRefrescar.onclick = () => location.reload()
+        this.btnSnapshot.onclick = () => this.takeCanvasSnapshot()
+        this.btnDescarga.onclick = () => this.downloadCanvasSnapshot()
 
     }
 
@@ -154,6 +159,19 @@ class Arco {
         }
 
         return suma.toFixed(1)
+    }
+
+    takeCanvasSnapshot(){
+
+        this.imgSnapshot.src = this.canvas.toDataURL()
+    }
+
+    downloadCanvasSnapshot(){
+        
+        const a = document.createElement('a')
+        a.href = this.canvas.toDataURL()
+        a.download = "arco.jpg"
+        a.click()
     }
 }
 
