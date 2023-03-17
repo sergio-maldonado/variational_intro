@@ -15,7 +15,6 @@ class Arco {
         this.x1 = undefined
         this.y1 = undefined
         this.puntitos = []
-        this.finalizado = false
         this.iniciarDemo()
     }
 
@@ -37,15 +36,15 @@ class Arco {
         this.crearReticula()
 
         //crear eventos para canvas
-        this.canvas.onmousedown = (ev) => this.marcarInicio(ev)
-        this.canvas.onmousemove = (ev) => this.dibujarArco(ev)
-        this.canvas.onmouseup = () => this.finalizarTrazo()
+        this.canvas.addEventListener( "mousedown", this.marcarInicio )
+        this.canvas.addEventListener( "mousemove", this.dibujarArco )
+        this.canvas.addEventListener( "mouseup", this.finalizarTrazo )
         // this.canvas.ontouchstart = (ev) => this.marcarInicioCel(ev)
         // this.canvas.ontouchmove = (ev) => this.dibujarArcoCel(ev)
         // this.canvas.ontouchend = () => this.finalizarTrazo()
         this.btnRefrescar.onclick = () => location.reload()
-        this.btnSnapshot.onclick = () => this.takeCanvasSnapshot()
-        this.btnDescarga.onclick = () => this.downloadCanvasSnapshot()
+        // this.btnSnapshot.onclick = () => this.takeCanvasSnapshot()
+        // this.btnDescarga.onclick = () => this.downloadCanvasSnapshot()
 
     }
 
@@ -88,10 +87,8 @@ class Arco {
         this.ctx.closePath()
     }
 
-    marcarInicio( ev ){
+    marcarInicio = ( ev ) => {
 
-        if( this.finalizado ) return 
-    
         const { offsetX: x, offsetY: y } = ev
         this.x1 = x
         this.y1 = y
@@ -108,9 +105,9 @@ class Arco {
     //     this.ctx.beginPath()
     // }
 
-    dibujarArco( ev ){
+    dibujarArco = ( ev ) => {
 
-        if( !this.x1 || !this.y1 || this.finalizado ) return
+        if( !this.x1 || !this.y1 ) return
 
         const { offsetX: x, offsetY: y } = ev
 
@@ -142,14 +139,13 @@ class Arco {
     //     this.y1 = y
     // }
 
-    finalizarTrazo(){
-
-        if( this.finalizado ) return
+    finalizarTrazo = () => {
 
         this.ctx.closePath()
-        this.calcularDerivada()
         this.spResultado.textContent = this.calcularDerivada() + ' a.u.'
-        this.finalizado= true
+        this.canvas.removeEventListener("mousedown", this.marcarInicio )
+        this.canvas.removeEventListener("mousemove", this.dibujarArco )
+        this.canvas.removeEventListener("mouseup", this.finalizarTrazo )
     }
 
     calcularDerivada(){
