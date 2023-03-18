@@ -14,11 +14,12 @@
 
 .canvasContainer > div > span {
     position: absolute;
+    font-size: 25px;
 }
 
 .canvasContainer > div > .medidaAlto {
     top: 50%;
-    left: -40px;
+    left: -50px;
 }
 
 .canvasContainer > div > .medidaAncho {

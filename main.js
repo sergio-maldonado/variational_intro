@@ -142,13 +142,13 @@ class Arco {
     finalizarTrazo = () => {
 
         this.ctx.closePath()
-        this.spResultado.textContent = this.calcularDerivada() + ' a.u.'
+        this.spResultado.textContent = this.calculaIntegral() + ' a.u.'
         this.canvas.removeEventListener("mousedown", this.marcarInicio )
         this.canvas.removeEventListener("mousemove", this.dibujarArco )
         this.canvas.removeEventListener("mouseup", this.finalizarTrazo )
     }
 
-    calcularDerivada(){
+    calculaIntegral(){
 
         let suma = 0
 
