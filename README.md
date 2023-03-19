@@ -1,2 +1,2 @@
-# arclenght 
-This is a simple web app where you draw a curve connecting two points and get the total arc length.
+# Variational intro
+This is a simple game where you draw a curve to try to minimise the shown integral/functional.
