@@ -6,45 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <script type="module">
-        import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
-        customElements.define("latex-js", LaTeXJSComponent)
-    </script>
-    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js/dist/">
-        \documentclass[18pt]{article}
 
-        \begin{document}
-        \begin{center}
-            $\int  \bar{f(x)}^{-2} \sqrt{1 + f'^2(x)} dx$
-        \end{center}
-        \end{document}
-      </latex-js>
-    <!-- <div class="canvasContainer">
-    </div> -->
-    <!-- <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-        <mi>x</mi> <mo>=</mo>
-        <mrow>
-            <mfrac>
-                <mrow>
-                    <mo>&#x2212;</mo>
-                    <mi>b</mi>
-                    <mo>&#x00B1;</mo>
-                    <msqrt>
-                        <msup><mi>b</mi><mn>2</mn></msup>
-                        <mo>&#x2212;</mo>
-                        <mn>4</mn><mi>a</mi><mi>c</mi>
-                    </msqrt>
-                </mrow>
-                <mrow>
-                    <mn>2</mn><mi>a</mi>
-                </mrow>
-            </mfrac>
-        </mrow>
-    </math> -->
+    <p> $$\int  \bar{f}(x)^{-2} \sqrt{1 + \left( \frac{df}{dx} \right)^2} dx $$</p>
 
     <div class="canvasContainer">
         <div>
