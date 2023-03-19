@@ -151,16 +151,18 @@ class Arco {
     calculaIntegral(){
 
         let suma = 0
+        const expon = -2
 
         for( let i = 0; i < this.puntitos.length - 1; i++ ){
 
             let calculoDx = this.puntitos[i + 1].x - this.puntitos[i].x
             let caluclofp = (this.puntitos[i + 1].y -  this.puntitos[i].y) / calculoDx
             let calculoRaiz = Math.sqrt( caluclofp**2 + 1 )
-            suma += calculoRaiz * calculoDx
+            let calculoExp = (this.puntitos[i].y/this.alturaCanvas)**expon
+            suma += calculoRaiz * calculoDx * calculoExp
         }
 
-        return suma.toFixed(1)
+        return Math.floor(suma) 
     }
 
     takeCanvasSnapshot(){
