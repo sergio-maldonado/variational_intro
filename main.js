@@ -25,8 +25,8 @@ class Arco {
         this.alturaCanvas = this.canvas.offsetHeight
         this.anchoCanvas = this.canvas.offsetWidth
         //fijar medida vista canvas
-        document.querySelector('.medidaAncho').textContent = this.anchoCanvas
-        document.querySelector('.medidaAlto').textContent = this.alturaCanvas 
+        document.querySelector('.medidaAncho').textContent = 'x'
+        document.querySelector('.medidaAlto').textContent = 'f(x)'
         //dibujar circulos
         const offsetInicial = 50
         this.dibujarCirculo( offsetInicial, this.alturaCanvas - offsetInicial )
